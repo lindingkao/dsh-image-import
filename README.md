@@ -32,12 +32,19 @@ function imageMediaType(value) {
 
 ## 安装
 
-```powershell
-# 在本仓库目录
-dsh plugin install .
+从 GitHub 安装（推荐）：
+
+```bash
+dsh plugin --profile <profile> add github:lindingkao/dsh-image-import
 ```
 
-或让 Harness 的插件管理器从本地目录安装（`install_bundle`，目标指向本目录）。
+从本地目录安装（开发用）：
+
+```bash
+dsh plugin --profile <profile> add /path/to/dsh-image-import
+```
+
+也可以在 Harness 的插件管理器里从本目录安装（`install_bundle`，目标指向本目录）。
 
 插件只改了浏览器侧，所以装完后刷新页面生效。
 
