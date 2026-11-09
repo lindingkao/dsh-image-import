@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "图片格式扩展",
+    "description": "让输入框能导入 PNG/JPEG/WebP/GIF 之外的图片：BMP、TIFF、ICO、AVIF、SVG、TGA、PCX、Netpbm 等，拖放、粘贴、一键选择都能用。"
+  }
+}

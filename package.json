@@ -1,0 +1,62 @@
+{
+  "name": "dsh-image-import",
+  "version": "0.1.0",
+  "description": "让 DeepSeek Harness 能导入 PNG/JPEG/WebP/GIF 之外的图片格式：拖放、粘贴与一键选择三条通道，浏览器端转码为宿主接受的格式 · Import more image formats into the Harness composer",
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "plugin",
+    "cordis",
+    "image",
+    "attachment",
+    "tiff",
+    "bmp",
+    "heic"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": [
+    "./client.js"
+  ],
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "lib",
+    "client.js",
+    "cordis.patch.yml",
+    "locale",
+    "icon.svg",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "test": "node test/codec.test.mjs && node test/bridge.test.mjs",
+    "fixtures": "python test/make_fixtures.py"
+  },
+  "author": "lindingkao",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lindingkao/dsh-image-import.git"
+  },
+  "homepage": "https://github.com/lindingkao/dsh-image-import#readme",
+  "bugs": {
+    "url": "https://github.com/lindingkao/dsh-image-import/issues"
+  }
+}
