@@ -24,6 +24,16 @@ window.__ModuleLoader__.load({
 
     return {
       /**
+       * 声明 cordis 服务依赖。
+       *
+       * 注意：package.json 里的 dsh.client.inject 表示「客户端模块的加载顺序」，
+       * 不是 cordis 服务注入。没有这一行时，apply() 里访问 ctx.slots 会直接抛
+       * cannot get property "slots" without inject，整块插件停在 loading 状态，
+       * 页面上的按钮与粘贴拦截都不会出现。
+       */
+      inject: ['slots'],
+
+      /**
        * 插件入口：挂上 DOM 桥，卸载时把它连监听器一起摘掉。
        * @param {object} ctx - Cordis 上下文。
        */
